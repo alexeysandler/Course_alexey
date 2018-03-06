@@ -24,7 +24,7 @@ public class Main {
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);){
             ArrayList<Shape> listFromFile = (ArrayList<Shape>)objectInputStream.readObject();
             for(Shape shape : listFromFile){
-                System.out.println(shape);
+                System.out.println(shape1);
             }
         }
     }
