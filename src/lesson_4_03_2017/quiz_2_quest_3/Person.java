@@ -1,4 +1,4 @@
-package HoMeWork.quiz_2_quest_3;
+package lesson_4_03_2017.quiz_2_quest_3;
 
 public class Person {
     private String name;

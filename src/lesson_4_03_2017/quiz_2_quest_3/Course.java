@@ -1,4 +1,4 @@
-package HoMeWork.quiz_2_quest_3;
+package lesson_4_03_2017.quiz_2_quest_3;
 
 public class Course {
     private String name;
@@ -7,6 +7,11 @@ public class Course {
     public Course(String name, int number) {
         this.name = name;
         this.number = number;
+    }
+
+    public Course(Course course) {
+        this.name = course.getName();
+        this.number = course.getNumber();
     }
 
     public String getName() {

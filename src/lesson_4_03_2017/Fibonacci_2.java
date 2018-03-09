@@ -2,7 +2,7 @@ package lesson_4_03_2017;
 
 public class Fibonacci_2{
     public static void main(String[] args) {
-        System.out.println( "ss" +fibonacci(6));
+        System.out.println( "sslkk" +fibonacci(6));
     }
 
         private static int fibonacci(int i) {
