@@ -1,11 +1,12 @@
 package lesson_4_03_2017.books_before_quize_2;
 
+
 public class Person{
 
     private String name;
-    private int id;
+    private Long id;
 
-    public Person(String name, int id) {
+    public Person(String name, Long id) {
         this.name = name;
         this.id = id;
     }
@@ -18,11 +19,11 @@ public class Person{
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

@@ -1,27 +1,35 @@
 package lesson_4_03_2017.books_before_quize_2;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Borrower extends Person{
 
-    Map<BookInstance,Date> borowerBookMap;
-    Date date;
+     Map<BookInstance,Date> borrowedBooksByDateMap = new HashMap<>();
+    static Map<Long,String> addedBorrowers = new HashMap<>();
 
-    public Borrower(String name, int id) {
+    public Borrower(String name, Long id) {
         super(name, id);
     }
 
-    public Borrower(Person alexey) {
-        super(alexey.getName(), alexey.getId());
+
+    public int getNumOfTheBooksPerBorrower() {
+        return borrowedBooksByDateMap.size();
     }
 
-        public void borrowTheBook(BookInstance bookInstance){
-        borowerBookMap.put(bookInstance, date=new Date());
-        }
 
-        public int getAmountBorrowedBooks(){
-        return borowerBookMap.size();
 
-        }
+    public void addBookInstanceToBorower(BookInstance bookInstance){
+        borrowedBooksByDateMap.put(bookInstance, new Date());
+    }
+
+
+    public Borrower(Person person) {
+        super(person.getName(), person.getId());
+        addedBorrowers.put(person.getId(), person.getName());
+
+    }
+
+
 }

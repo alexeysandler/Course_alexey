@@ -2,3 +2,10 @@
 :
 
 puzzle.txt,1\2\124b95afaf471b4fe03bc6678571fabf7ada031a
+=
+Project_1.iml,5\9\59444389a4fb17d45eb4198c294efaa255df06c7
+<
+InAlexey.txt,7\6\76c6209fd529c313eb7264fb5607fd5207995236
+:
+
+Alexey.txt,1\b\1b2d22b85e8e92737b196e02c51e34f8d43ae6fc

@@ -3,7 +3,7 @@ package lesson_4_03_2017.quiz_2_quest_3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class School implements ApplyOnStudent {
+public class School  {
     List<Course> courses = new ArrayList<>();
     List<Student> students = new ArrayList<>();
     List<Teacher> teachers = new ArrayList<>();
@@ -25,22 +25,11 @@ public class School implements ApplyOnStudent {
 
     }
     }
-    public void sendEmailToStudentInCourse(CourseInstance courseInstance, String subject, String message){
-        forAllStudentsInCourse(courseInstance,
-                new ApplyOnStudent() {
-                    @Override
-                    public void applyFunction(Student student) {
-                        MyEmail.sendMail(student);
+    public void sendEmailToStudentInCourse(CourseInstance courseInstance, String subject, String message) {
 
-                    }
-                });
+        ApplyOnStudent applyOnStudent = new SendEmail(subject, message);
+        forAllStudentsInCourse(courseInstance,applyOnStudent );
 
     }
 
-
-    @Override
-    public void applyFunction(Student student) {
-     //   MyEmail.sendMail(student);
-
-    }
 }

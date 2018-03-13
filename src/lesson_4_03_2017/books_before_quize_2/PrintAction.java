@@ -1,13 +1,15 @@
 package lesson_4_03_2017.books_before_quize_2;
 
-public class PrintAction {
+import lesson_4_03_2017.quiz_2_quest_3.ApplyOnStudent;
+import lesson_4_03_2017.quiz_2_quest_3.Student;
 
-    Borrower borrower;
+public class PrintAction implements ApplyOnBorrower {
 
-    public PrintAction(Borrower borrower) {
-        this.borrower = borrower;
+
+    @Override
+    public void applyFunction(Borrower borrower) {
+
+        System.out.println(borrower.getName() +" borrowed "+ borrower.getNumOfTheBooksPerBorrower()+ " books.");
     }
-    public static void getBookByBorrower(Borrower borrower){
-        System.out.println(borrower.getName() +" "+ borrower.getAmountBorrowedBooks());
-    }
+
 }

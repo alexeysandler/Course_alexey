@@ -4,11 +4,11 @@ public class MyEmail  {
 
     private static String subj;
     private static String message;
-    private String email;
+   private String email;
 
 
-    public static void sendMail(Student student){
-        System.out.println("The email has been sent. The email properties: " +    subj +"message: " + message+ " email: " + student.getEmail());
+    public static void sendMail(String email, String subj, String message){
+        System.out.println(email +" " +subj+" "+ message);
     }
 
 }
