@@ -19,14 +19,35 @@ public class NumCollection implements Iterable<Integer> {
     }
 
     private List stringToList(String numCollectionStr) throws UnsortedException {
-
+        List<String> containsRangesList = new ArrayList<>();
         acomplishedList = Arrays.asList(numCollectionStr.split(","));
 
+
+            if (acomplishedList.get(0).startsWith("-")) {
+                acomplishTheList(acomplishedList);
+                if(acomplishedList.size()==1) {
+                    return acomplishedList;
+                }
+            }
+
+
         if(isRangeExists(acomplishedList)){
-            acomplishedList = splitByMinusAndAcomplishRange(numCollectionStr);
-            return acomplishedList;
+            for(String string : acomplishedList) {
+                if( !isListValueContainsRange(string)){
+                    containsRangesList.add(string);
+                }else {
+                    containsRangesList.addAll(splitByMinusAndAcomplishRange(string));
+                }
+            }
+            acomplishedList = containsRangesList;
+            return containsRangesList;
         }
         return acomplishTheList(acomplishedList);
+    }
+
+    private boolean isListValueContainsRange(String string) {
+
+        return string.contains("-");
 
     }
 
@@ -67,7 +88,7 @@ public class NumCollection implements Iterable<Integer> {
     private boolean isRangeExists(List<String> list) {
         boolean exists = false;
         for(String string : list){
-            if(string.contains("-")){
+            if(string.contains("-")&& !string.startsWith("-")){
                 exists=true;
             }
         }

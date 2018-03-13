@@ -11,7 +11,23 @@ public class NumCollectionTest {
     @Test
     public void checkMixedRange() throws UnsortedException {
         NumCollection numCollection = new NumCollection("1,3-6");
-        assertTrue(numCollection.contains(5));
+        assertTrue(numCollection.contains(6));
+    }
+    @Test
+    public void checkMixedRangeStartsNegative() throws UnsortedException {
+        NumCollection numCollection = new NumCollection("-1,3");
+        assertTrue(numCollection.contains(-1));
+    }
+    @Test
+    public void checkMixedRangeOnlyNegative() throws UnsortedException {
+        NumCollection numCollection = new NumCollection("-6,-3,-2,-1");
+        assertTrue(numCollection.contains(-1));
+    }
+
+    @Test
+    public void checkMixedRangeBetweenNotRanges() throws UnsortedException {
+        NumCollection numCollection = new NumCollection("1,3-6,9,20-22");
+        assertTrue(numCollection.contains(22));
     }
 
     @Test
