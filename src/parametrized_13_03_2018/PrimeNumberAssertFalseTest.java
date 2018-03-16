@@ -11,24 +11,24 @@ import java.util.Collection;
 
 import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
-public class PrimeNumberTest {
+public class PrimeNumberAssertFalseTest {
     private int input;
 
-    public PrimeNumberTest(int input) {
+    public PrimeNumberAssertFalseTest(int input) {
         this.input = input;
     }
 
     @Test
     public void isPrimeNumbers(){
-        assertTrue(PrimeNumber.isPrime(input));
+        assertFalse(PrimeNumber.isPrime(input));
     }
 
-    @Parameters(name = "{index}: The ({0}) is prime number.")
+    @Parameters(name = "{index}: The ({0}) is NOT prime number.")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {11},
-                {7},
-                {3},
+                {12},
+                {6},
+                {99},
         });
     }
 }

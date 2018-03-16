@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import static org.junit.runners.Parameterized.*;
-
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -28,7 +27,7 @@ public class Factorial1Test {
 
     }
 
-    @Parameters
+    @Parameters(name = "{index}: factorial of ({0}) is ({1})")
     public static Collection<Object[]> data(){
         return Arrays.asList(new Object[][]{
                 {5,120},

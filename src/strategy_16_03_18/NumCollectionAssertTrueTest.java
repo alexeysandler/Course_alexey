@@ -1,15 +1,16 @@
-package unit_test_10_03_2018;
+package strategy_16_03_18;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import static org.junit.runners.Parameterized.*;
+import unit_test_10_03_2018.UnsortedException;
 
 import java.util.Arrays;
 import java.util.Collection;
 
+import static org.junit.Assert.assertTrue;
+import static org.junit.runners.Parameterized.Parameters;
 
-import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class NumCollectionAssertTrueTest {
     private String inputString;
@@ -34,8 +35,7 @@ public class NumCollectionAssertTrueTest {
                 {"-1", -1},
                 {"3-6", 5},
                 {"1,3,5", 5},
-                {"-21,-3,5", -3},
-               // {"-10--8", -9},
+                {"-21,-3,5", -3}
 
 
         });

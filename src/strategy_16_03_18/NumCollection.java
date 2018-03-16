@@ -1,6 +1,11 @@
-package unit_test_10_03_2018;
+package strategy_16_03_18;
 
-import java.util.*;
+import unit_test_10_03_2018.UnsortedException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class NumCollection implements Iterable<Integer> {
 

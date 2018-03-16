@@ -6,30 +6,38 @@ import org.junit.runners.Parameterized;
 import static org.junit.runners.Parameterized.*;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 
 import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
-public class FibonaciTest {
+
+public class FactorialAssertFalseTest {
     private int input;
     private int output;
 
-    public FibonaciTest(int input, int output) {
+    public FactorialAssertFalseTest(int input, int output) {
         this.input = input;
         this.output = output;
     }
+
     @Test
-    public void fibonacciTest(){
-        assertEquals(Fibonaci.fibonacci(input),output);
+    public void factorialMultiTest(){
+
+        assertNotEquals(Factorial1.calcFactorial(input), output);
+
     }
 
-    @Parameters(name = "{index}: fibonacci of({0}) is ({1})")
+    @Parameters(name = "{index}: factorial of ({0}) is NOT ({1})")
     public static Collection<Object[]> data(){
         return Arrays.asList(new Object[][]{
-                {0,1},
-                {1,1},
-                {2,2},
-                {3,3},
-                {5,8},
+                {5,110},
+                {2,4},
+                {3,9},
         });
     }
+
+
+
+
+
 }
