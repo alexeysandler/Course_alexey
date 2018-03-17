@@ -3,7 +3,7 @@ package arrays;
 public class Card {
     public String suite;
     public int value;
-    public Card(int suite, int value) {
+    public Card(int suite, int value ) {
         if(suite==0) {
             this.suite = "hearts";
         }else if (suite == 1){
